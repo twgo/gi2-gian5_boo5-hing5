@@ -1,4 +1,4 @@
-FROM siann
+FROM gotw/siann1-hak8_boo5-hing5:6
 
 MAINTAINER sih4sing5hong5
 
@@ -34,7 +34,7 @@ RUN bash -c 'gzip -dc /usr/local/hok8-bu7/台語.txt.gz > tshi3/台語.txt'
 WORKDIR /usr/local/kaldi/tools
 RUN curl 'http://www.speech.sri.com/projects/srilm/srilm_download.php' -H 'Host: www.speech.sri.com' -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:57.0) Gecko/20100101 Firefox/57.0' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Accept-Language: zh-TW,zh;q=0.8,en-US;q=0.5,en;q=0.3' --compressed -H 'Referer: http://www.speech.sri.com/projects/srilm/download.html' -H 'Content-Type: application/x-www-form-urlencoded' -H 'Connection: keep-alive' -H 'Upgrade-Insecure-Requests: 1' --data 'WWW_file=srilm-1.7.2.tar.gz&WWW_name=Sing-Hong&WWW_org=AS&WWW_address=&WWW_email=ihcaoe%40mail.com&WWW_url='  > srilm.tgz
 RUN apt-get install gawk
-RUN extras/install_srilm.sh 
+RUN extras/install_srilm.sh
 
 
 WORKDIR $KALDI_S5C
@@ -42,7 +42,7 @@ RUN /usr/local/kaldi/tools/srilm/bin/i686-m64/ngram-count -text tshi3/台語.txt
     -prune 1e-4 -lm $LM_tai5
 RUN /usr/local/kaldi/tools/srilm/bin/i686-m64/ngram-count -text tshi3/台語.txt -order 3 \
     -prune 1e-7 -lm $LM3_tai5
-    
+
 RUN cat $LM_tai5 | gzip > $LM_tai5_GZ
 RUN utils/format_lm.sh tshi3/lang_dict $LM_tai5_GZ tshi3/local/dict/lexicon.txt tshi3/lang-1gram
 
