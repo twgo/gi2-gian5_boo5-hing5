@@ -52,6 +52,6 @@ RUN utils/build_const_arpa_lm.sh $LM3_tai5_GZ tshi3/lang-1gram tshi3/lang-3grams
 
 RUN git pull
 RUN bash -c 'rm -rf exp/{tri1,tri2,tri3,tri4}/decode_train_dev*'
-RUN bash -c 'time bash -x 走評估.sh data/lang-1gram tshi3/train'
+RUN bash -c 'time bash -x 走評估.sh tshi3/lang-1gram tshi3/train'
 
 RUN bash -c 'time bash 看結果.sh'
