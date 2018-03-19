@@ -1,4 +1,4 @@
-FROM siann
+FROM gotw/siann1-hak8_boo5-hing5:6
 
 MAINTAINER sih4sing5hong5
 
