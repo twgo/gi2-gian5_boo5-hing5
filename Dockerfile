@@ -1,4 +1,4 @@
-FROM gotw/siann1-hak8_boo5-hing5:6
+FROM localhost:5000/siann1-hak8_boo5-hing5:14
 
 MAINTAINER sih4sing5hong5
 
