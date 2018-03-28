@@ -1,4 +1,4 @@
-FROM gotw/siann1-hak8_boo5-hing5:6
+FROM 10.32.0.120:5000/siann1-hak8_boo5-hing5:6
 
 MAINTAINER sih4sing5hong5
 
