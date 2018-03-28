@@ -55,3 +55,9 @@ RUN bash -c 'rm -rf exp/{tri1,tri2,tri3,tri4}/decode_train_dev*'
 RUN bash -c 'time bash -x 走評估.sh data/lang-1gram tshi3/train'
 
 RUN bash -c 'time bash 看結果.sh'
+
+# 印開發環境
+WORKDIR /usr/local/kaldi/tools
+RUN git log -1 --format="%H"
+
+RUN pip3 freeze
