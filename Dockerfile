@@ -1,4 +1,4 @@
-FROM localhost:5000/siann1-hak8_boo5-hing5:14
+FROM localhost:5000/siann1-hak8_boo5-hing5:20
 
 MAINTAINER sih4sing5hong5
 
