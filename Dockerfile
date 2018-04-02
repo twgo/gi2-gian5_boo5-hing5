@@ -13,6 +13,7 @@ RUN rm -rf db.sqlite3
 RUN python3 manage.py migrate
 
 RUN echo 匯入TW01Test當作仝語者
+RUN pip3 install --upgrade tw01
 RUN python3 manage.py 匯入TW01Test當作仝語者 /usr/local/pian7sik4_gi2liau7/TW01TestAll
 
 ## 匯出語料
