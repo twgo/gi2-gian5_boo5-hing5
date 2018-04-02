@@ -17,8 +17,8 @@ RUN pip3 install --upgrade tw01
 RUN python3 manage.py 匯入TW01Test當作仝語者 /usr/local/pian7sik4_gi2liau7/TW01TestAll
 
 ## 匯出語料
-RUN python3 manage.py 匯出Kaldi格式資料 --資料夾 tshi3 臺語 $KALDI_S5C
-RUN python3 manage.py 轉Kaldi音節text 臺語 拆做聲韻 $KALDI_S5C/tshi3/train/ $KALDI_S5C/tshi3/train_free
+RUN python3 manage.py 匯出Kaldi格式資料 --資料夾 tshi3 臺語 拆做聲韻 $KALDI_S5C
+RUN python3 manage.py 轉Kaldi音節text 臺語 $KALDI_S5C/tshi3/train/ $KALDI_S5C/tshi3/train_free
 
 WORKDIR $KALDI_S5C
 RUN git pull
