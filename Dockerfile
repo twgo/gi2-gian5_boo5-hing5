@@ -30,3 +30,5 @@ WORKDIR /usr/local/kaldi/tools
 RUN git log -1 --format="%H"
 
 RUN pip3 freeze
+
+# test 0409
