@@ -1,4 +1,4 @@
-FROM localhost:5000/siann1-hak8_boo5-hing5:24
+FROM localhost:5000/siann1-hak8_boo5-hing5:21
 
 MAINTAINER sih4sing5hong5
 
@@ -31,4 +31,4 @@ RUN git log -1 --format="%H"
 
 RUN pip3 freeze
 
-# test 04090954
+# test 04090956
