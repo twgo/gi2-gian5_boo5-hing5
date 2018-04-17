@@ -1,4 +1,4 @@
-FROM siann
+FROM localhost:5000/siann1-hak8_boo5-hing5:24
 
 MAINTAINER sih4sing5hong5
 
@@ -24,3 +24,9 @@ RUN bash -c 'rm -rf exp/{tri1,tri2,tri3,tri4}/decode_train_dev*'
 RUN bash -c 'time bash -x 走評估.sh data/lang_free tshi3/train_free'
 
 RUN bash -c 'time bash 看結果.sh'
+
+# 印開發環境
+WORKDIR /usr/local/kaldi/tools
+RUN git log -1 --format="%H"
+
+RUN pip3 freeze
