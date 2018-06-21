@@ -21,6 +21,8 @@ RUN python3 manage.py 轉Kaldi音節text 臺語 $KALDI_S5C/tshi3/train/ $KALDI_S
 WORKDIR $KALDI_S5C
 RUN git pull
 RUN bash -c 'rm -rf exp/{tri1,tri2,tri3,tri4}/decode_train_dev*'
+
+RUN sed 's/nj\=[0-9]+/nj\=8/g' -i 走評估.sh
 RUN bash -c 'time bash -x 走評估.sh data/lang_free tshi3/train_free'
 
 RUN bash -c 'time bash 看結果.sh'
