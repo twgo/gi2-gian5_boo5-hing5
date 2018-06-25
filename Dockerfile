@@ -21,7 +21,7 @@ RUN python3 manage.py 匯出Kaldi格式資料 --資料夾 tshi3 臺語 拆做聲
 RUN python3 manage.py 轉Kaldi音節text 臺語 $KALDI_S5C/tshi3/train/ $KALDI_S5C/tshi3/train_free
 
 ## 準備 8K wav.scp 模擬電話音質
-RUN sed -i -z 's/\n/avconv -i - -f wav -ar 8000 - \|\n/g' $KALDI_S5C/data/train/wav.scp
+RUN sed -i -z 's/\n/avconv -i - -f wav -ar 8000 - \|\n/g' $KALDI_S5C/tshi3/train/wav.scp
 
 WORKDIR $KALDI_S5C
 RUN git pull
