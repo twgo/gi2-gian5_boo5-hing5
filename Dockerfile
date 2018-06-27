@@ -1,4 +1,4 @@
-FROM localhost:5000/siann1-hak8_boo5-hing5:96
+FROM dockerhub.iis.sinica.edu.tw/siann1-hak8_boo5-hing5:96
 
 MAINTAINER sih4sing5hong5
 
