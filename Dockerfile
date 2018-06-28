@@ -4,6 +4,10 @@ MAINTAINER sih4sing5hong5
 
 ENV CPU_CORE 4
 
+RUN \
+  apt-get update -qq && \
+  apt-get install -y ffmpeg libav-tools\
+
 ##  匯入語料
 WORKDIR /usr/local/pian7sik4_gi2liau7/
 RUN git pull
@@ -28,7 +32,7 @@ RUN git pull
 COPY conf/mfcc.conf conf/mfcc.conf
 RUN bash -c 'rm -rf exp/{tri1,tri2,tri3,tri4}/decode_train_dev*'
 RUN sed 's/nj\=4/nj\=1/g' -i 走評估.sh
-# RUN bash -c 'time bash -x 走評估.sh data/lang_free tshi3/train_free'
-#
-# RUN echo 看結果
-# RUN bash -c 'time bash 看結果.sh'
+RUN bash -c 'time bash -x 走評估.sh data/lang_free tshi3/train_free'
+
+RUN echo 看結果
+RUN bash -c 'time bash 看結果.sh'
