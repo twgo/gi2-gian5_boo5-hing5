@@ -6,7 +6,7 @@ ENV CPU_CORE 4
 
 RUN \
   apt-get update -qq && \
-  apt-get install -y ffmpeg libav-tools\
+  apt-get install -y ffmpeg libav-tools
 
 ##  匯入語料
 WORKDIR /usr/local/pian7sik4_gi2liau7/
