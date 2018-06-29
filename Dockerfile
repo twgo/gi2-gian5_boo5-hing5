@@ -1,4 +1,4 @@
-
+FROM localhost:5000/siann1-hak8_boo5-hing5:100
 
 MAINTAINER sih4sing5hong5
 
@@ -22,6 +22,7 @@ RUN python3 manage.py 轉Kaldi音節text 臺語 $KALDI_S5C/tshi3/train/ $KALDI_S
 
 WORKDIR $KALDI_S5C
 RUN git pull
+COPY conf/mfcc.conf conf/mfcc.conf
 RUN bash -c 'rm -rf exp/{tri1,tri2,tri3,tri4}/decode_train_dev*'
 RUN sed 's/nj\=4/nj\=1/g' -i 走評估.sh
 RUN bash -c 'time bash -x 走評估.sh data/lang_free tshi3/train_free'
