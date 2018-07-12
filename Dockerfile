@@ -1,4 +1,4 @@
-FROM dockerhub.iis.sinica.edu.tw/siann1-hak8_boo5-hing5:62
+FROM dockerhub.iis.sinica.edu.tw/siann1-hak8_boo5-hing5:114
 
 MAINTAINER sih4sing5hong5
 
@@ -20,12 +20,16 @@ RUN echo 匯入TW01Test當作仝語者
 RUN pip3 install --upgrade tw01
 RUN python3 manage.py 匯入TW01Test當作仝語者 /usr/local/pian7sik4_gi2liau7/TW01TestAll
 
+
 ## 匯出語料
 RUN python3 manage.py 匯出Kaldi格式資料 --資料夾 tshi3 臺語 拆做聲韻 $KALDI_S5C
-RUN python3 manage.py 轉Kaldi音節text 臺語 $KALDI_S5C/tshi3/train/ $KALDI_S5C/tshi3/train_free
 
 ## 準備 8K a-law wav.scp 模擬電話音質
-RUN sed -i -z 's/\n/avconv -i - -f alaw -ar 8000 - | avconv -f alaw -ar 8000 -i - -f wav -ar 8000 -\|\n/g' $KALDI_S5C/tshi3/train_free/wav.scp
+RUN sed -i -z 's/\n/avconv -i - -f alaw -ar 8000 - | avconv -f alaw -ar 8000 -i - -f wav -ar 8000 -\|\n/g' $KALDI_S5C/tshi3/train/wav.scp
+
+RUN python3 manage.py 轉Kaldi音節text 臺語 $KALDI_S5C/tshi3/train/ $KALDI_S5C/tshi3/train_free
+## 匯出語料
+
 
 WORKDIR $KALDI_S5C
 RUN git pull
