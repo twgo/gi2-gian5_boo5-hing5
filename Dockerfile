@@ -14,8 +14,8 @@ RUN python3 manage.py migrate
 RUN pip3 install --upgrade https://github.com/twgo/twisas/archive/master.zip
 
 RUN python3 manage.py migrate
-RUN python3 manage.py 匯入台文語料庫2版 valid /usr/local/gi2_liau7_khoo3/twi    sas2.json
-RUN python3 manage.py 匯入台文語料庫trs valid /usr/local/pian7sik4_gi2liau7/    twisas-trs/twisas-HL-kaldi.json
+RUN python3 manage.py 匯入台文語料庫2版 valid /usr/local/gi2_liau7_khoo3/twisas2.json
+RUN python3 manage.py 匯入台文語料庫trs valid /usr/local/pian7sik4_gi2liau7/twisas-trs/twisas-HL-kaldi.json
 
 
 ## 匯出語料
