@@ -6,7 +6,7 @@ ENV CPU_CORE 32
 
 ##  匯入語料
 WORKDIR /usr/local/pian7sik4_gi2liau7/
-RUN git pull
+RUN git pull # 0828
 
 WORKDIR /usr/local/hok8-bu7/
 RUN rm -rf db.sqlite3
