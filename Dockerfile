@@ -13,6 +13,7 @@ RUN rm -rf db.sqlite3
 RUN python3 manage.py migrate
 RUN pip3 install --upgrade https://github.com/twgo/twisas/archive/master.zip
 
+COPY twisas2.json /usr/local/gi2_liau7_khoo3/twisas2.json 
 RUN python3 manage.py migrate
 RUN python3 manage.py 匯入台文語料庫2版 本調 valid /usr/local/gi2_liau7_khoo3/twisas2.json
 RUN python3 manage.py 匯入台文語料庫2版 本調 test /usr/local/gi2_liau7_khoo3/twisas2.json
