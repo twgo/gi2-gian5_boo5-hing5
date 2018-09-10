@@ -4,6 +4,8 @@ MAINTAINER sih4sing5hong5
 
 ENV CPU_CORE 4
 
+RUN apt-get install -y vim
+
 ##  匯入語料
 WORKDIR /usr/local/pian7sik4_gi2liau7/
 RUN git pull
@@ -22,7 +24,7 @@ WORKDIR $KALDI_S5C
 RUN git pull
 RUN bash -c 'rm -rf exp/{tri1,tri2,tri3,tri4}/decode_train_dev*'
 
-RUN sed 's/nj\=[0-9]+/nj\=8/g' -i 走評估.sh
+RUN sed 's/nj\=[0-9]\+/nj\=8/g' -i 走評估.sh
 RUN bash -c 'time bash -x 走評估.sh data/lang_free tshi3/train_free'
 
 RUN bash -c 'time bash 看結果.sh'
