@@ -23,6 +23,8 @@ RUN python3 manage.py 匯入台文語料庫trs 本調 test /usr/local/pian7sik4_
 
 
 ## 匯出語料
+RUN pip3 install --upgrade https://github.com/i3thuan5/tai5-uan5_gian5-gi2_hok8-bu7/archive/kaldi%E7%94%A8%E6%B8%85%E6%B0%A3%E7%9A%84%E5%8F%A5.zip
+
 RUN python3 manage.py 匯出Kaldi格式資料 --資料夾 tshi3 臺語 拆做聲韻 $KALDI_S5C
 RUN python3 manage.py 轉Kaldi音節text 臺語 $KALDI_S5C/tshi3/train/ $KALDI_S5C/tshi3/train_free
 
