@@ -15,7 +15,7 @@ RUN apt-get install -y vim
 WORKDIR /usr/local/hok8-bu7/
 RUN rm -rf db.sqlite3
 
-RUN echo 0828
+RUN echo 0927
 RUN pip3 install --upgrade https://github.com/twgo/twisas/archive/kati-liokim.zip
 COPY twisas2.json /usr/local/gi2_liau7_khoo3/twisas2.json 
 
