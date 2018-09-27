@@ -8,6 +8,7 @@ ENV CPU_CORE 32
 WORKDIR /usr/local/pian7sik4_gi2liau7/
 RUN git pull # 0828
 RUN git pull # 0927
+RUN git lfs pull # 0927
 
 RUN apt-get install -y vim
 
@@ -35,7 +36,7 @@ WORKDIR $KALDI_S5C
 RUN git pull
 RUN bash -c 'rm -rf exp/{tri1,tri2,tri3,tri4}/decode_train_dev*'
 
-#RUN sed 's/nj\=[0-9]\+/nj\=54/g' -i 走評估.sh
+RUN sed 's/nj\=[0-9]\+/nj\=54/g' -i 走評估.sh
 COPY 走評估.sh .
 RUN bash -c 'time bash -x 走評估.sh data/lang_free tshi3/train_free'
 
