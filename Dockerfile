@@ -7,20 +7,23 @@ ENV CPU_CORE 32
 ##  匯入語料
 WORKDIR /usr/local/pian7sik4_gi2liau7/
 RUN git pull # 0828
+RUN git pull # 0927
+
+RUN apt-get install -y vim
 
 WORKDIR /usr/local/hok8-bu7/
 RUN rm -rf db.sqlite3
 
 RUN echo 0828
-RUN pip3 install --upgrade https://github.com/twgo/twisas/archive/master.zip
+RUN pip3 install --upgrade https://github.com/twgo/twisas/archive/kati-liokim.zip
 COPY twisas2.json /usr/local/gi2_liau7_khoo3/twisas2.json 
 
 RUN python3 manage.py migrate
-RUN python3 manage.py 匯入台文語料庫2版 本調 valid /usr/local/gi2_liau7_khoo3/twisas2.json
-RUN python3 manage.py 匯入台文語料庫2版 本調 test /usr/local/gi2_liau7_khoo3/twisas2.json
-RUN python3 manage.py 匯入台文語料庫trs 本調 valid /usr/local/pian7sik4_gi2liau7/twisas-trs/twisas-HL-kaldi.json
-RUN python3 manage.py 匯入台文語料庫trs 本調 test /usr/local/pian7sik4_gi2liau7/twisas-trs/twisas-HL-kaldi.json
-
+#RUN python3 manage.py 匯入台文語料庫2版 本調 valid /usr/local/gi2_liau7_khoo3/twisas2.json
+#RUN python3 manage.py 匯入台文語料庫2版 本調 test /usr/local/gi2_liau7_khoo3/twisas2.json
+#RUN python3 manage.py 匯入台文語料庫trs 本調 valid /usr/local/pian7sik4_gi2liau7/twisas-trs/twisas-HL-kaldi.json
+#RUN python3 manage.py 匯入台文語料庫trs 本調 test /usr/local/pian7sik4_gi2liau7/twisas-trs/twisas-HL-kaldi.json
+RUN python3 manage.py katiliokim /usr/local/pian7sik4_gi2liau7/kati_liokim
 
 ## 匯出語料
 RUN pip3 install --upgrade https://github.com/i3thuan5/tai5-uan5_gian5-gi2_hok8-bu7/archive/kaldi%E7%94%A8%E6%B8%85%E6%B0%A3%E7%9A%84%E5%8F%A5.zip
