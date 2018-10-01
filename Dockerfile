@@ -7,16 +7,15 @@ ENV CPU_CORE 32
 ##  匯入語料
 WORKDIR /usr/local/pian7sik4_gi2liau7/
 RUN git pull # 0828
-RUN git pull # 0927
-RUN git lfs pull # 0927
+RUN git pull # 1001
+RUN git lfs pull # 1001
 
 RUN apt-get install -y vim
 
 WORKDIR /usr/local/hok8-bu7/
 RUN rm -rf db.sqlite3
 
-RUN echo 0927
-RUN pip3 install --upgrade https://github.com/twgo/twisas/archive/kati-liokim.zip
+RUN pip3 install --upgrade https://github.com/twgo/twisas/archive/tan60ku.zip
 COPY twisas2.json /usr/local/gi2_liau7_khoo3/twisas2.json 
 
 RUN python3 manage.py migrate
