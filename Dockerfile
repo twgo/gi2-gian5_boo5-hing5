@@ -1,4 +1,4 @@
-FROM siann1-hak8_boo5-hing5:ting
+FROM siann1-hak8_boo5-hing5:196
 
 MAINTAINER sih4sing5hong5
 
@@ -39,4 +39,4 @@ RUN sed 's/nj\=[0-9]\+/nj\=54/g' -i 走評估.sh
 COPY 走評估.sh .
 RUN bash -c 'time bash -x 走評估.sh data/lang_free tshi3/train_free'
 
-RUN bash -c 'time bash 看結果.sh' # tri4 nia
+RUN bash -c 'time bash 看結果.sh' # tri4 nia, run this again
