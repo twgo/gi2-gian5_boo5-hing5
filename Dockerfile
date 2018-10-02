@@ -1,4 +1,4 @@
-FROM siann1-hak8_boo5-hing5:196
+FROM dockerhub.iis.sinica.edu.tw/siann1-hak8_boo5-hing5:196
 
 MAINTAINER sih4sing5hong5
 
