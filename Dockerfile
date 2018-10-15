@@ -9,21 +9,23 @@ WORKDIR /usr/local/pian7sik4_gi2liau7/
 RUN git pull # 0828
 RUN git pull # 1001
 RUN git lfs pull # 1001
+RUN git pull # 1015
+RUN git lfs pull # 1015
 
 RUN apt-get install -y vim
 
 WORKDIR /usr/local/hok8-bu7/
 RUN rm -rf db.sqlite3
 
-RUN pip3 install --upgrade https://github.com/twgo/twisas/archive/tan60ku.zip
-COPY twisas2.json /usr/local/gi2_liau7_khoo3/twisas2.json 
+RUN pip3 install --upgrade thaktrs
+RUN pip3 install --upgrade https://github.com/twgo/twisas/archive/%E8%AA%BF%E6%9F%A5%E5%B1%80trs.zip
 
 RUN python3 manage.py migrate
 #RUN python3 manage.py 匯入台文語料庫2版 本調 valid /usr/local/gi2_liau7_khoo3/twisas2.json
 #RUN python3 manage.py 匯入台文語料庫2版 本調 test /usr/local/gi2_liau7_khoo3/twisas2.json
 #RUN python3 manage.py 匯入台文語料庫trs 本調 valid /usr/local/pian7sik4_gi2liau7/twisas-trs/twisas-HL-kaldi.json
 #RUN python3 manage.py 匯入台文語料庫trs 本調 test /usr/local/pian7sik4_gi2liau7/twisas-trs/twisas-HL-kaldi.json
-RUN python3 manage.py tan60ku /usr/local/pian7sik4_gi2liau7/20171027tan_60ku
+RUN python3 manage.py tiautsakioktrs /usr/local/pian7sik4_gi2liau7/tiautsakiok-trs
 
 ## 匯出語料
 RUN pip3 install --upgrade https://github.com/i3thuan5/tai5-uan5_gian5-gi2_hok8-bu7/archive/master.zip
