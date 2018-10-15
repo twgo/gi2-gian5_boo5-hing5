@@ -9,7 +9,7 @@ WORKDIR /usr/local/pian7sik4_gi2liau7/
 RUN git pull # 0828
 RUN git pull # 1001
 RUN git lfs pull # 1001
-RUN git pull # 1015
+RUN git pull # 1015-1520
 RUN git lfs pull # 1015
 
 RUN apt-get install -y vim
